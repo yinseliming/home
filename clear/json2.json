@@ -1,0 +1,157 @@
+{
+  "智能主机":[
+	  {
+	    "Name":"智能主机R系列",
+	    "goodID": 101,
+	    "picSrc":"img/p_rzhuji.jpg"
+	  },
+	  {
+      "Name":"智能主机S系列",
+      "goodID": 102,
+      "picSrc":"img/p_szhuji.jpg"
+    }
+  ],
+  "智能灯光控制":[
+  	 {
+  	    "Name":"博朗零火智能开关（轻触型）",
+  	    "goodID": 201,
+  	    "picSrc":"img/p_2_1.jpg"
+  	 },
+  	{
+      "Name":"博悦智慧夜灯套餐",
+      "goodID": 202,
+      "picSrc":"img/p_2_1.jpg"
+    },
+	{
+	  "Name":"博睿情景开关",
+	  "goodID": 203,
+	  "picSrc":"img/p_2_3.jpg"
+	},
+	{
+	  "Name":"人体感应智能开关",
+	  "goodID": 204,
+	  "picSrc":"img/p_2_4.jpg"
+	},
+	{
+	  "Name":"博睿智能手势开关",
+	  "goodID": 205,
+	  "picSrc":"img/p_2_5.jpg"
+	},
+	{
+	  "Name":"博睿零火0-10V智能调光开关",
+	  "goodID": 206,
+	  "picSrc":"img/p_2_6.jpg"
+	},
+	{
+	  "Name":"博睿零火可控硅智能调光开关",
+	  "goodID": 207,
+	  "picSrc":"img/p_2_7.jpg"
+	},
+	{
+	  "Name":"博睿零火智能开关",
+	  "goodID": 208,
+	  "picSrc":"img/p_2_8.png"
+	},
+	{
+	  "Name":"博睿单火智能开关",
+	  "goodID": 209,
+	  "picSrc":"img/p_2_9.png"
+	},
+	{
+	  "Name":"博朗单火智能开关（轻触型）",
+	  "goodID": 210,
+	  "picSrc":"img/p_2_10.jpg"
+	},
+	{
+	  "Name":"大功率单火智能开关",
+	  "goodID": 211,
+	  "picSrc":"img/p_2_11.jpg"
+	}
+  ],
+  "智能电器控制":[
+  	  {
+  	    "Name":"360度红外转发器",
+  	    "goodID": 301,
+  	    "picSrc":"img/p_3_1.jpg"
+  	  },
+  	  {
+      "Name":"智能插座(10A)",
+      "goodID": 302,
+      "picSrc":"img/p_3_2.jpg"
+    },
+	{
+	  "Name":"移动智能插座",
+	  "goodID": 303,
+	  "picSrc":"img/p_3_3.jpg"
+	}
+  ],
+  "智能安防监控":[
+  	  {
+  	    "Name":"博朗零火智能开关（轻触型）",
+  	    "goodID": 401,
+  	    "picSrc":"img/p_4_1.jpg"
+  	  },
+  	  {
+      "Name":"博悦智慧夜灯套餐",
+      "goodID": 402,
+      "picSrc":"img/p_3_2.jpg"
+    },
+  	{
+  	  "Name":"博睿情景开关",
+  	  "goodID": 403,
+  	  "picSrc":"img/p_3_3.jpg"
+  	},
+	{
+	  "Name":"人体感应智能开关",
+	  "goodID": 404,
+	  "picSrc":"img/p_4_4.jpg"
+	},
+	{
+	  "Name":"博睿智能手势开关",
+	  "goodID": 405,
+	  "picSrc":"img/p_4_5.jpg"
+	},
+	{
+	  "Name":"博睿零火0-10V智能调光开关",
+	  "goodID": 406,
+	  "picSrc":"img/p_4_6.jpg"
+	},
+	{
+	  "Name":"博睿零火可控硅智能调光开关",
+	  "goodID": 407,
+	  "picSrc":"img/p_4_7.jpg"
+	},
+	{
+	  "Name":"博睿零火智能开关",
+	  "goodID": 408,
+	  "picSrc":"img/p_4_8.jpg"
+	},
+	{
+	  "Name":"博睿单火智能开关",
+	  "goodID": 409,
+	  "picSrc":"img/p_4_9.jpg"
+	},
+	{
+	  "Name":"博朗单火智能开关（轻触型）",
+	  "goodID": 410,
+	  "picSrc":"img/p_4_10.jpg"
+	}
+  ],
+  "智能门窗控制":[
+  	  {
+  	    "Name":"窗帘电机",
+  	    "goodID": 501,
+  	    "picSrc":"img/p_5_1.jpg"
+  	  },
+  	  {
+      "Name":"链式推窗器",
+      "goodID": 502,
+      "picSrc":"img/p_5_2.jpg"
+    },
+  	{
+  	  "Name":"智能门锁",
+  	  "goodID": 503,
+  	  "picSrc":"img/p_5_3.jpg"
+  	}
+  ]
+}

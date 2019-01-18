@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>header</title>
+		<style type="text/css">
+			* {
+			  margin: 0;
+			  padding: 0;
+				text-decoration: none;
+			}
+			header {
+			  position: fixed;
+			  top: 0;
+			  width: 100%;
+			  background-color: #f2f2f2;
+			  z-index: 999999;
+			  color: black;
+			}
+			header nav {
+			  margin: 0 auto;
+			  width: 1280px;
+			}
+			header nav .logo {
+			  float: left;
+			  width: 320px;
+			  height: 80px;
+			  display: flex;
+			  align-items: center;
+			}
+			header nav .logo img {
+			  width: 250px;
+			  height: 35px;
+			}
+			header nav .ser {
+			  float: right;
+			  width: 960px;
+			  height: 80px;
+			  display: flex;
+			  justify-content: space-around;
+			  align-items: center;
+			}
+			header nav .ser a {
+			  width: 150px;
+			  font-family: 宋体;
+			  font-size: 20px;
+			  font-weight: 500;
+			  text-align: right;
+			  cursor: pointer;
+			}
+			header nav .ser a:hover {
+			  color: #52a7b1;
+			}
+			header nav .ser .active {
+			  color: #52a7b1;
+				font-weight: 600;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header class="header">
+			<nav>
+				<div class="logo">
+					<img src="img/logo.svg" >
+				</div>
+				<div class="ser">
+					<a class="active" style="width: 60px; text-align: left;" href="index.html">首页</a>
+					<a href="http://www.polyhome.com/solutions/af">解决方案</a>
+					<a href="product.html">产品中心</a>
+					<a href="http://www.polyhome.com/partners/list">合作伙伴</a>
+					<a href="jiameng.html">招商加盟</a>
+					<a href="aboutus.html">关于我们</a>
+					<a href="yemianshow.html">页面展示</a>
+				</div>
+			</nav>
+		</header>
+	</body>
+</html>

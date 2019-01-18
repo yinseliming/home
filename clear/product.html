@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Polyhome智能家居,智能家居产品,ZigBee智能家居,北京智能家居,无线智能家居- Polyhome官网</title>
+		<link rel="shortcut icon" href="img/favicon.icon">
+		<link rel="stylesheet" type="text/css" href="css/pruduct.css" />
+	</head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<body>
+		<div id="header"></div>
+		<section class="p_lunbo">
+			<ul class="banner">
+				<li><img src="img/p_banner1.jpg" style="opacity: 1;"></li>
+				<li><img src="img/p_banner2.jpg"></li>
+			</ul>
+			<div class="pot">
+				<ul class="point">
+					<li style="background-color: #42a29b;"></li>
+					<li></li>
+				</ul>
+			</div>
+			<div id="1001"style="position: absolute;bottom: 0;height: 80px;"></div>
+		</section>
+		
+		<section class="p_play">
+			<div class="content">
+				<div class="p_list">
+					<h4>
+						智能主机
+						<i></i>
+					</h4>
+					<ul class="showone">
+						
+					</ul>
+				</div>
+			</div>
+			<div id="1002"style="position: absolute;bottom: 0;height: 80px;"></div>
+		</section>
+         
+		<section class="p_play dif">
+			<div class="content">
+				<div class="p_list">
+					<h4>
+						智能灯光控制
+						<i></i>
+					</h4>
+					<ul class="showtwo">
+						
+					</ul>
+				</div>
+			</div>
+			<div id="1003"style="position: absolute;bottom: 0;height: 80px;"></div>
+		</section>
+         
+		<section class="p_play">
+			<div class="content">
+				<div class="p_list">
+					<h4>智能电器控制<i></i></h4>
+					<ul class="showthree">
+						
+					</ul>
+				</div>
+			</div>
+			<div id="1004"style="position: absolute;bottom: 0;height: 80px;"></div>
+		</section>
+        
+		<section class="p_play dif">
+			<div class="content">
+				<div class="p_list">
+					<h4>
+						智能安防监控
+						<i></i>
+					</h4>
+					<ul class="showfour">
+						
+					</ul>
+				</div>
+			</div>
+		</section>
+		<div id="1005">
+			
+		</div>
+		<section class="p_play">
+			<div class="content">
+				<div class="p_list">
+					<h4>
+						智能门窗控制
+						<i></i>
+					</h4>
+					<ul class="showfive">
+						
+					</ul>
+				</div>
+			</div>
+		</section>
+		<div class="topbon">
+			<!-- 回到页面顶部的一个按钮 -->
+			<a></a>
+		</div>
+
+		<div id="footer"></div>
+        <script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/product_1.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			function $c(cl) {
+				return document.getElementsByClassName(cl);
+			}
+			$('#header').load('header.html');
+			$('#footer').load('footer.html');
+			setTimeout(() => {
+				var oSer = $c("ser")[0].getElementsByTagName("a");
+				for (let i = 0; i < oSer.length; i++) {
+					oSer[i].className = ""
+				}
+				oSer[2].className = "active";
+			}, 100);
+			window.onscroll = scrollev;
+			function scrollev() { //绑定scroll事件
+				var t = document.documentElement.scrollTop || document.body.scrollTop; //获取滚动距离
+				var top_div = $c("header")[0]; //查询并定义div元素
+				if (t > 200) { //判断
+				    top_div.style.color = "white";
+				    top_div.style.backgroundColor = "black";
+					oBon.style.display = "block";
+				} else {
+					top_div.style.color = "black";
+					top_div.style.backgroundColor = " #f2f2f2";
+					oBon.style.display = "none";
+				}
+			}
+			setTimeout(scrollev,0);
+			var oAul=$c("showone")[0];
+			var oBul=$c("showtwo")[0];
+			var oCul=$c("showthree")[0];
+			var oDul=$c("showfour")[0];
+			var oEul=$c("showfive")[0];
+			ajax("get", "json2.json", "", function(list) {
+                var json = JSON.parse(list);
+                // console.log(json.智能主机);
+                for(let i=0;i<json.智能主机.length;i++){
+                	if(i%3==2){
+                		oAul.innerHTML+=`
+                		<li data-id=${json.智能主机[i].goodID} class="right">
+                			<a data-id=${json.智能主机[i].goodID}>
+                				<div class="p-img" data-id=${json.智能主机[i].goodID}>
+                					<img src="${json.智能主机[i].picSrc}">
+                					<span>${json.智能主机[i].Name}</span>
+                				</div>
+                			</a>
+                		</li>
+                		`
+                	}else{
+                		oAul.innerHTML+=`
+                	<li data-id=${json.智能主机[i].goodID}>
+                		<a data-id=${json.智能主机[i].goodID}>
+                			<div class="p-img" data-id=${json.智能主机[i].goodID}>
+                				<img src="${json.智能主机[i].picSrc}">
+                				<span>${json.智能主机[i].Name}</span>
+                			</div>
+                		</a>
+                	</li>
+                	`
+                	}
+                }
+				for(let i=0;i<json.智能灯光控制.length;i++){
+					if(i%3==2){
+						oBul.innerHTML+=`
+						<li data-id=${json.智能灯光控制[i].goodID} class="right">
+							<a data-id=${json.智能灯光控制[i].goodID}>
+								<div class="p-img" data-id=${json.智能灯光控制[i].goodID}>
+									<img src="${json.智能灯光控制[i].picSrc}">
+									<span>${json.智能灯光控制[i].Name}</span>
+								</div>
+							</a>
+						</li>
+						`
+					}else{
+						oBul.innerHTML+=`
+					<li data-id=${json.智能灯光控制[i].goodID}>
+						<a data-id=${json.智能灯光控制[i].goodID}>
+							<div class="p-img" data-id=${json.智能灯光控制[i].goodID}>
+								<img src="${json.智能灯光控制[i].picSrc}">
+								<span>${json.智能灯光控制[i].Name}</span>
+							</div>
+						</a>
+					</li>
+					`
+					}
+				}
+				for(let i=0;i<json.智能电器控制.length;i++){
+					if(i%3==2){
+						oCul.innerHTML+=`
+						<li data-id=${json.智能电器控制[i].goodID} class="right">
+							<a data-id=${json.智能电器控制[i].goodID}>
+								<div class="p-img" data-id=${json.智能电器控制[i].goodID}>
+									<img src="${json.智能电器控制[i].picSrc}">
+									<span>${json.智能电器控制[i].Name}</span>
+								</div>
+							</a>
+						</li>
+						`
+					}else{
+						oCul.innerHTML+=`
+					<li data-id=${json.智能电器控制[i].goodID}>
+						<a data-id=${json.智能电器控制[i].goodID}>
+							<div class="p-img" data-id=${json.智能电器控制[i].goodID}>
+								<img src="${json.智能电器控制[i].picSrc}">
+								<span>${json.智能电器控制[i].Name}</span>
+							</div>
+						</a>
+					</li>
+					`
+					}
+				}
+			for(let i=0;i<json.智能安防监控.length;i++){
+					if(i%3==2){
+						oDul.innerHTML+=`
+						<li data-id=${json.智能安防监控[i].goodID} class="right">
+							<a data-id=${json.智能安防监控[i].goodID}>
+								<div class="p-img" data-id=${json.智能安防监控[i].goodID}>
+									<img src="${json.智能安防监控[i].picSrc}">
+									<span>${json.智能安防监控[i].Name}</span>
+								</div>
+							</a>
+						</li>
+						`
+					}else{
+						oDul.innerHTML+=`
+					<li data-id=${json.智能安防监控[i].goodID}>
+						<a data-id=${json.智能安防监控[i].goodID}>
+							<div class="p-img" data-id=${json.智能安防监控[i].goodID}>
+								<img src="${json.智能安防监控[i].picSrc}">
+								<span>${json.智能安防监控[i].Name}</span>
+							</div>
+						</a>
+					</li>
+					`
+					}
+				}
+			for(let i=0;i<json.智能门窗控制.length;i++){
+					if(i%3==2){
+						oEul.innerHTML+=`
+						<li data-id=${json.智能门窗控制[i].goodID} class="right">
+							<a data-id=${json.智能门窗控制[i].goodID}>
+								<div class="p-img" data-id=${json.智能门窗控制[i].goodID}>
+									<img src="${json.智能门窗控制[i].picSrc}">
+									<span>${json.智能门窗控制[i].Name}</span>
+								</div>
+							</a>
+						</li>
+						`
+					}else{
+						oEul.innerHTML+=`
+					<li data-id=${json.智能门窗控制[i].goodID}>
+						<a data-id=${json.智能门窗控制[i].goodID}>
+							<div class="p-img" data-id=${json.智能门窗控制[i].goodID}>
+								<img src="${json.智能门窗控制[i].picSrc}">
+								<span>${json.智能门窗控制[i].Name}</span>
+							</div>
+						</a>
+					</li>
+					`
+					}
+				}
+				oAul.addEventListener("click", function(ev) {
+					var ev = window.event || ev;
+					var target = ev.target || ev.srcElement;
+					window.open("moreone.html?"+ target.parentNode.getAttribute("data-id"))
+				});
+				oBul.addEventListener("click", function(ev) {
+					var ev = window.event || ev;
+					var target = ev.target || ev.srcElement;
+					window.open("moreone.html?"+ target.parentNode.getAttribute("data-id"))
+				});
+				oCul.addEventListener("click", function(ev) {
+					var ev = window.event || ev;
+					var target = ev.target || ev.srcElement;
+					window.open("moreone.html?"+ target.parentNode.getAttribute("data-id"))
+				});
+				oDul.addEventListener("click", function(ev) {
+					var ev = window.event || ev;
+					var target = ev.target || ev.srcElement;
+					window.open("moreone.html?"+ target.parentNode.getAttribute("data-id"))
+				});
+				oEul.addEventListener("click", function(ev) {
+					var ev = window.event || ev;
+					var target = ev.target || ev.srcElement;
+					window.open("moreone.html?"+ target.parentNode.getAttribute("data-id"))
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>博力恒昌</title>
+		<link rel="shortcut icon" href="img/favicon.icon">
+        <style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-size: 0;
+			}
+        	header{
+				width: 100%;
+				height: 80px;
+			}
+			.apic{
+				height: 560px;
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+			}
+			.apic_rq{
+				width: 100%;
+				height: 100%;
+				background-image: url(img/1021.jpg);
+				background-size: cover;
+			}
+			.word{
+				width: 100%;
+				overflow: hidden;
+                background: #f4f6f7;
+                padding-top: 70px;
+                padding-bottom: 80px;
+	        }
+			.content{
+				position: relative;
+				width: 1100px;
+                margin: 0 auto;
+			}
+			.content>h3{
+				width: 100%;
+                float: left;
+                font-size: 32px;
+                color: #5d5d5d;
+                line-height: 35px;
+                text-align: center;
+                font-weight: 600;
+                letter-spacing: 1.48px;
+                position: relative;
+                margin-bottom: 80px;
+			}
+			.content>img{
+				min-width: 100%;
+                float: left;
+			}
+			.name{
+				font-size: 36px;
+                margin-bottom: 40px;
+			}
+			.de{
+				width: 100%;
+                float: left;
+                font-size: 18px;
+                color: #666;
+                margin-bottom: 70px;
+                line-height: 30px;
+                letter-spacing: 0.83px;
+			}
+			.canshu{
+				width: 100%;
+				overflow: hidden;
+				background: #e4ecef;
+				padding-top: 70px;
+				padding-bottom: 80px;
+			}
+			.gline{
+                  position: absolute;
+                  left: 522px;
+                  bottom: -20px;
+                  background: #37a991;
+                  width: 56px;
+                  height: 4px;
+			}
+			.anzhuang{
+				width: 100%;
+                overflow: hidden;
+                background: #f7f7f7;
+				padding-top: 70px;
+				padding-bottom: 80px;
+			}
+        </style>
+	</head>
+	<body>
+		<div id="header"></div>
+		
+		<section class="apic">
+			<div class="apic_rq">
+			</div>
+		</section>
+		
+		<section class="word">
+			<div class="content">
+		     
+	        </div>
+		</section>
+		
+		<section class="canshu">
+			<div class="content">
+				
+			</div>
+		</section>
+		
+		<section class="anzhuang">
+			<div class="content">
+			
+			</div>
+		</section>
+		
+		<div class="topbon">
+			<!-- 回到页面顶部的一个按钮 -->
+			<a></a>
+		</div>
+		<div id="footer"></div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function $c(cl) {
+				return document.getElementsByClassName(cl);
+			}
+			$('#header').load('header.html');
+			$('#footer').load('footer.html');
+			setTimeout(() => {
+				var oSer = $c("ser")[0].getElementsByTagName("a");
+				for (let i = 0; i < oSer.length; i++) {
+					oSer[i].className = ""
+				}
+				oSer[2].className = "active";
+			}, 100);
+			window.onscroll = scrollev;
+			function scrollev() { //绑定scroll事件
+				var t = document.documentElement.scrollTop || document.body.scrollTop; //获取滚动距离
+				var top_div = $c("header")[0]; //查询并定义div元素
+				if (t > 200) { //判断
+				    top_div.style.color = "white";
+				    top_div.style.backgroundColor = "black";
+					oBon.style.display = "block";
+				} else {
+					top_div.style.color = "black";
+					top_div.style.backgroundColor = " #f2f2f2";
+					oBon.style.display = "none";
+				}
+			}
+			var oBanner=$c("apic_rq")[0];
+            var oCon=$c("content");
+			var id = location.search.substring(location.search.indexOf("?") + 1, );
+            ajax("get", "json3.json", "", function(list) {
+            	var json = JSON.parse(list);
+				console.log(json[id][0].picSrcone);
+				let s=json[id][0].picSrcone;
+				$(oBanner).css("background-image","url("+s+")");
+				oCon[0].innerHTML=`
+				<h3 class="name">${json[id][0].Name}</h3>
+				 <p class="de">${json[id][0].art}</p>
+				 <h3>
+				 场景与特征
+				<i class="gline"></i>
+				 </h3>
+				 <img src="${json[id][0].picSrctwo}">
+				 `
+				 oCon[1].innerHTML=`
+                 <h3>
+                  技术参数
+                  <i class="gline"></i>
+                 </h3>
+                 <img src="${json[id][0].picSrcthree}">
+				 `
+				 oCon[2].innerHTML=`
+                 <h3>
+                  安装示意
+                  <i class="gline"></i>
+                 </h3>
+                 	<img src="${json[id][0].picSrcfour}" >
+				`
+				});
+		</script>
+	</body>
+</html>
